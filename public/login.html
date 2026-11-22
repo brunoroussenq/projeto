@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - OS System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background: #343a40;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .login-logo {
+            display: none;
+            max-height: 80px;
+            max-width: 220px;
+            object-fit: contain;
+            margin: 0 auto 16px;
+            background: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body class="bg-dark text-light">
+    <div class="login-box text-center border border-secondary">
+        <img id="loginLogo" class="login-logo" src="/api/empresa/logo" alt="Logo da empresa"
+            onload="this.style.display='block'; document.getElementById('loginTitulo').style.display='none';"
+            onerror="this.style.display='none';">
+        <h2 id="loginTitulo">TECH SYSTEM</h2>
+        <form id="formLogin" autocomplete="off">
+            <div class="mb-3 text-start">
+                <label for="loginEmail">E-mail</label>
+                <input type="email" id="loginEmail" class="form-control bg-secondary text-light border-0"
+                    autocomplete="off" required>
+            </div>
+            <div class="mb-4 text-start">
+                <label for="loginSenha">Senha</label>
+                <input type="password" id="loginSenha" class="form-control bg-secondary text-light border-0"
+                    autocomplete="new-password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar no Sistema</button>
+        </form>
+        <div id="loginAlert" class="alert alert-danger mt-3 d-none"></div>
+        <hr class="border-secondary my-4">
+        <p class="mb-2">É cliente? Consulte suas ordens de serviço.</p>
+        <a class="btn btn-outline-light w-100" href="consulta-os.html">Consultar minhas OS</a>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
